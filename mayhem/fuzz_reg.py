@@ -22,7 +22,7 @@ def TestOneInput(data):
     except (ConstError, UnicodeDecodeError, StreamError):
         return -1
     except (struct.error, StopIteration) as e:
-        if ctr > 10000:
+        if ctr > 1000:
             raise e
         return -1
 
