@@ -21,10 +21,10 @@ def TestOneInput(data):
         reg.recurse_subkeys(as_json=fdp.ConsumeBool())
     except (ConstError, UnicodeDecodeError, StreamError):
         return -1
-    #except (struct.error, StopIteration) as e:
-     #   if ctr > 100:
-      #      raise e
-       # return -1
+    except (struct.error, StopIteration) as e:
+        if ctr > 100:
+            raise e
+        return -1
 
 def main():
     atheris.Setup(sys.argv, TestOneInput)
