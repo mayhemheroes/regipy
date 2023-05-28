@@ -1,0 +1,9 @@
+project: regipy
+target: fuzz-reg
+testsuite:
+    - file://mayhem/testsuite
+
+cmds:
+  - cmd: /src/mayhem/fuzz_reg.py
+    libfuzzer: true
+
